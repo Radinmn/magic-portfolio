@@ -20,6 +20,7 @@ interface ProjectCardProps {
   playLink?: string;
   postTags?: string[];
   compact?: boolean;
+  priority?: boolean; // ✅ ADD THIS
 }
 
 const cleanInlineText = (text: string) => {
@@ -32,17 +33,13 @@ const cleanInlineText = (text: string) => {
 
 const extractSection = (content: string, heading: string) => {
   const escapedHeading = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const regex = new RegExp(
-    `##\\s+${escapedHeading}\\s*([\\s\\S]*?)(?=\\n##\\s+|$)`,
-    "i"
-  );
+  const regex = new RegExp(`##\\s+${escapedHeading}\\s*([\\s\\S]*?)(?=\\n##\\s+|$)`, "i");
 
   const match = content.match(regex);
   return match ? match[1].trim() : "";
 };
 
-const getOverview = (content: string) =>
-  cleanInlineText(extractSection(content, "Overview"));
+const getOverview = (content: string) => cleanInlineText(extractSection(content, "Overview"));
 
 const getWhyItStandsOut = (content: string) =>
   cleanInlineText(extractSection(content, "Why it stands out"));
@@ -173,9 +170,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* RIGHT */}
         {hasMeta && (
           <Column gap="20" style={{ flex: 1.45, minWidth: 0 }}>
-            {!compact && avatars?.length > 0 && (
-              <AvatarGroup avatars={avatars} size="m" reverse />
-            )}
+            {!compact && avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
 
             {description?.trim() && (
               <Text
@@ -246,10 +241,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <Column gap="8">
                   {workPoints.map((point) => (
                     <Flex key={point} gap="8">
-                      <Text
-                        variant="body-default-s"
-                        style={{ color: "rgba(120, 170, 255, 0.9)" }}
-                      >
+                      <Text variant="body-default-s" style={{ color: "rgba(120, 170, 255, 0.9)" }}>
                         ✦
                       </Text>
 
