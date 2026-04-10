@@ -175,7 +175,7 @@ export default function About() {
                               href={item.link}
                               prefixIcon={item.icon}
                               label={item.name}
-                              size="s"
+                              size="l"
                               weight="default"
                               variant="secondary"
                             />
