@@ -428,7 +428,7 @@ export default function About() {
                     </Text>
 
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="6">
+                      <Row wrap gap="8" paddingTop="l">
                         {skill.tags.map((tag, tagIndex) => (
                           <Tag
                             key={`${skill.title}-${tagIndex}`}
