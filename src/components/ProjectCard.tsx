@@ -118,7 +118,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <Flex
         fillWidth
-        gap="88"
+        gap="64"
         s={{ direction: "column" }}
         m={{ direction: "row" }}
         style={{ alignItems: "flex-start" }}
@@ -213,7 +213,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {/* WORK */}
             {workPoints.length > 0 && (
               <Column
-                gap="10"
+                gap="8"
                 style={{
                   padding: "14px 16px",
                   borderRadius: "16px",
@@ -232,9 +232,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   What I worked on
                 </Text>
 
-                <Column gap="10">
-                  {workPoints.map((point, i) => (
-                    <Flex key={i} gap="10">
+                <Column gap="8">
+                  {workPoints.map((point) => (
+                    <Flex key={point} gap="8">
                       <Text
                         variant="body-default-s"
                         style={{ color: "rgba(120, 170, 255, 0.9)" }}
