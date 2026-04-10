@@ -100,8 +100,7 @@ export default function About() {
             position="sticky"
             s={{ position: "relative", style: { top: "auto" } }}
             xs={{ style: { top: "auto" } }}
-            minWidth={180}
-            paddingX="l"
+style={{ minWidth: "180px" }}            paddingX="l"
             paddingBottom="xl"
             gap="16"
             flex={3}
@@ -286,7 +285,7 @@ export default function About() {
 
                       <Column
                         as="ul"
-                        gap="14"
+                        gap="m"
                         style={{
                           paddingLeft: "18px",
                           margin: 0,
@@ -307,7 +306,7 @@ export default function About() {
                       </Column>
 
                       {(projectPageHref || experience.link) && (
-                        <Row gap="10" wrap paddingTop="4">
+                        <Row gap="0" wrap paddingTop="4">
                           {projectPageHref && (
                             <Button href={projectPageHref} variant="secondary" size="s">
                               View Full Project
@@ -372,7 +371,7 @@ export default function About() {
                   <Column
                     key={`${institution.name}-${index}`}
                     fillWidth
-                    gap="6"
+                    gap="0"
                     style={{
                       padding: "18px 20px",
                       borderRadius: "18px",
@@ -407,7 +406,7 @@ export default function About() {
                 {about.technical.skills.map((skill, index) => (
                   <Column
                     key={`${skill.title}-${index}`}
-                    gap="10"
+                    gap="s"
                     style={{
                       flex: "1 1 280px",
                       padding: "18px 20px",
