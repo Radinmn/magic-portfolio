@@ -73,8 +73,8 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
-        </Row>
+  Toronto, Canada
+</Row>
         <Row fillWidth horizontal="center">
           <Row
             background="page"
@@ -90,6 +90,25 @@ export const Header = () => {
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                 {routes["/work"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="grid"
+                      href="/work"
+                      label={work.label}
+                      selected={pathname.startsWith("/work")}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="grid"
+                      href="/work"
+                      selected={pathname.startsWith("/work")}
+                    />
+                  </Row>
+                </>
+              )}
               {routes["/about"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -109,26 +128,7 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/work"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/blog"] && (
+              {/* {routes["/blog"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
@@ -146,8 +146,8 @@ export const Header = () => {
                     />
                   </Row>
                 </>
-              )}
-              {routes["/gallery"] && (
+              )} */}
+              {/* {routes["/gallery"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
@@ -165,7 +165,7 @@ export const Header = () => {
                     />
                   </Row>
                 </>
-              )}
+              )} */}
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />

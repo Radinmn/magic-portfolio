@@ -1,5 +1,5 @@
-import { IconName } from "@/resources/icons";
-import { zones } from "tzdata";
+import type { IconName } from "@/resources/icons";
+import type { zones } from "tzdata";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
@@ -25,6 +25,7 @@ export type Person = {
   email: string;
   /** IANA time zone location */
   location: IANATimeZone;
+  displayLocation?: string;
   /** Languages spoken */
   languages?: string[];
 };

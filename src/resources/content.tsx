@@ -1,49 +1,35 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Radin",
+  lastName: "Moayyedian",
+  name: "Radin Moayyedian",
+  role: "Digital Media Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "radinmoayyedian@gmail.com",
+  location: "America/Toronto",
+  displayLocation: "Toronto, Canada",
+  languages: ["English", "Farsi"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Updates on projects, design, and development.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/Radinmn",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/radin-mydn/",
     essential: true,
   },
   {
@@ -59,25 +45,26 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  description: `Portfolio website showcasing the work of ${person.name}, a ${person.role}.`,
+  headline: <>Building immersive digital experiences</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Featured Projects</strong>
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Selected work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      <strong>Radin Moayyedian</strong> — Digital Media Developer based in Toronto,
+      creating interactive work across web, games, and emerging media.
+    </>
   ),
 };
 
@@ -85,7 +72,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, a ${person.role} based in Toronto.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,139 +81,161 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Radin Moayyedian is a Digital Media Developer with experience building interactive
+        applications, multimedia systems, and user-focused web experiences. His work combines
+        front-end development, Unity, and creative technology with a strong focus on usability,
+        engagement, and performance. He enjoys bringing together design, code, and interactivity
+        to create digital products that are both functional and memorable.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Tweed & Bottlecap Media",
+        timeframe: "Oct 2022 – Feb 2023",
+        role: "Game Developer — Tweed Grow To Win",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          "Developed a promotional web-based game in Unity and C#, building task-based gameplay, interactive environments, and player progression systems.",
+          "Implemented core gameplay mechanics including objectives, task flow, and score tracking to support user engagement and repeat play.",
+          "Built a score tracking system using AWS to securely store user data and support weekly performance-based rewards.",
+          "Collaborated with design and marketing teams to align gameplay, visuals, and reward systems with campaign goals while optimizing performance across web and mobile.",
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Tweed Grow To Win promotional game",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Personal Project",
+        timeframe: "Mar 2025 – Present",
+        role: "Unity Developer — Duck Hunt VR",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          "Developed a VR game in Unity and C#, implementing physics-based shooting mechanics and real-time interactions for immersive gameplay.",
+          "Integrated motion controller input and spatial audio to create responsive and engaging player feedback.",
+          "Designed dynamic environments with animation and particle effects while optimizing scene transitions and overall performance.",
+        ],
+        images: [],
+      },
+      {
+        company: "York University",
+        timeframe: "Jan 2025 – Apr 2025",
+        role: "Interactive Web Developer — HarmonicHue",
+        achievements: [
+          "Built an interactive web application using JavaScript, HTML, CSS, and p5.js to generate personalized music-based experiences.",
+          "Designed a multi-step interface with animation, real-time feedback, and dynamic content to improve engagement and usability.",
+          "Tested the experience with 50+ users and analyzed feedback in Excel to refine interaction flow and completion rates.",
+        ],
+        images: [],
+      },
+      {
+        company: "York University",
+        timeframe: "Sep 2025 – Mar 2026",
+        role: "Interactive Systems Developer — Mutate",
+        achievements: [
+          "Developed a hybrid board game that combined physical gameplay with digital system responses using Arduino, sensors, and embedded components.",
+          "Integrated hall-effect sensors, servo motors, and LEDs to create responsive, real-time interactions between players and the game board.",
+          "Designed and modelled physical game components in Blender for 3D printing and collaborated with a multidisciplinary team to connect hardware, software, and gameplay systems.",
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "York University",
+        description: <>Honours B.A. in Digital Media – Development Stream.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Programming",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Comfortable building interactive applications and digital experiences with a strong
+            foundation in object-oriented programming, scripting, and front-end logic.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Python", icon: "python" },
+          { name: "C#", icon: "csharp" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "Java", icon: "java" },
+          { name: "C++", icon: "cplusplus" },
+          { name: "Bash", icon: "terminal" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Game Engines & Creative Tools",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Experienced with building games, immersive media, and digital prototypes across 3D,
+            XR, and fabrication workflows.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Unity", icon: "unity" },
+          { name: "Unity XR Toolkit", icon: "unity" },
+          { name: "Oculus SDK", icon: "vr" },
+          { name: "Blender", icon: "blender" },
+          { name: "Bambu Studio", icon: "tool" },
+          { name: "Excel", icon: "table" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Web Development",
+        description: (
+          <>
+            Builds responsive and interactive web experiences with a focus on clear structure,
+            engagement, and usability.
+          </>
+        ),
+        tags: [
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "React", icon: "react" },
         ],
+        images: [],
+      },
+      {
+        title: "Workflow & Collaboration",
+        description: (
+          <>
+            Comfortable working across development and design pipelines using modern tools,
+            version control, and collaborative production workflows.
+          </>
+        ),
+        tags: [
+          { name: "Git", icon: "git" },
+          { name: "GitHub", icon: "github" },
+          { name: "UI/UX", icon: "sparkle" },
+          { name: "Bilingual", icon: "globe" },
+        ],
+        images: [],
       },
     ],
   },
@@ -235,28 +244,22 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Writing and reflections",
+  description: `Thoughts, experiments, and updates from ${person.name}.`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
+  label: "Projects",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Selected digital media, interactive, and development projects by ${person.name}.`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Gallery – ${person.name}`,
+  description: `A visual collection by ${person.name}.`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",

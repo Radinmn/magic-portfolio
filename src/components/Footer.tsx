@@ -1,4 +1,4 @@
-import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import { Row, IconButton, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -6,13 +6,20 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
+    <Row
+      as="footer"
+      fillWidth
+      paddingY="24"
+      horizontal="center"
+      s={{ direction: "column" }}
+    >
       <Row
         className={styles.mobile}
         maxWidth="m"
-        paddingY="8"
+        fillWidth
         paddingX="16"
-        gap="16"
+        paddingY="12"
+        gap="20"
         horizontal="between"
         vertical="center"
         s={{
@@ -21,17 +28,16 @@ export const Footer = () => {
           align: "center",
         }}
       >
-        <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear} /</Text>
-          <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / Build your portfolio with{" "}
-            <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
-          </Text>
+        <Text variant="body-default-s" onBackground="neutral-weak">
+          © {currentYear} {person.name}
         </Text>
-        <Row gap="16">
-          {social.map(
+
+<Row
+  gap="20"
+  vertical="center"
+  horizontal="center"
+  style={{ transform: "scale(2)", transformOrigin: "center" }}
+>          {social.map(
             (item) =>
               item.link && (
                 <IconButton
@@ -39,14 +45,13 @@ export const Footer = () => {
                   href={item.link}
                   icon={item.icon}
                   tooltip={item.name}
-                  size="s"
+                  size="m"
                   variant="ghost"
                 />
               ),
           )}
         </Row>
       </Row>
-      <Row height="80" hide s={{ hide: false }} />
     </Row>
   );
 };

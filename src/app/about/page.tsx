@@ -96,7 +96,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              Toronto, Canada
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">
@@ -211,16 +211,17 @@ export default function About() {
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
+  <Text variant="heading-strong-l">
+    {experience.role}
+  </Text>
+  <Text variant="heading-default-xs" onBackground="neutral-weak">
+    {experience.timeframe}
+  </Text>
+</Row>
+
+<Text variant="body-default-s" onBackground="neutral-weak" marginBottom="m">
+  {experience.company}
+</Text>
                     <Column as="ul" gap="16">
                       {experience.achievements.map(
                         (achievement: React.ReactNode, index: number) => (
