@@ -11,14 +11,13 @@ import {
 } from "@once-ui-system/core";
 
 interface ProjectCardProps {
-  href: string;
-  priority?: boolean;
   images: string[];
   title: string;
   content: string;
   description: string;
   avatars: { src: string }[];
   link: string;
+  playLink?: string;
   postTags?: string[];
   compact?: boolean;
 }
@@ -42,15 +41,11 @@ const extractSection = (content: string, heading: string) => {
   return match ? match[1].trim() : "";
 };
 
-const getOverview = (content: string) => {
-  const section = extractSection(content, "Overview");
-  return cleanInlineText(section);
-};
+const getOverview = (content: string) =>
+  cleanInlineText(extractSection(content, "Overview"));
 
-const getWhyItStandsOut = (content: string) => {
-  const section = extractSection(content, "Why it stands out");
-  return cleanInlineText(section);
-};
+const getWhyItStandsOut = (content: string) =>
+  cleanInlineText(extractSection(content, "Why it stands out"));
 
 const getWorkPoints = (content: string) => {
   const section = extractSection(content, "What I worked on");
@@ -61,7 +56,6 @@ const getWorkPoints = (content: string) => {
     .map((line) => line.trim())
     .filter((line) => line.startsWith("-"))
     .map((line) => cleanInlineText(line.replace(/^-+\s*/, "")))
-    .filter(Boolean)
     .slice(0, 4);
 };
 
@@ -72,9 +66,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  playLink,
   postTags = [],
   compact = false,
 }) => {
+  const finalLink = playLink || link;
+
   const hasImages = images.length > 0;
   const overview = compact ? "" : getOverview(content);
   const whyItStandsOut = compact ? "" : getWhyItStandsOut(content);
@@ -86,7 +83,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     overview ||
     whyItStandsOut ||
     workPoints.length > 0 ||
-    link ||
+    finalLink ||
     postTags.length > 0;
 
   return (
@@ -98,21 +95,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
+      {/* CLICKABLE IMAGE */}
       {hasImages && (
         <Column
           fillWidth
           style={{
             overflow: "hidden",
             borderRadius: "20px",
+            cursor: finalLink ? "pointer" : "default",
           }}
         >
-          <Carousel
-            sizes="(max-width: 960px) 100vw, 960px"
-            items={images.map((image) => ({
-              slide: image,
-              alt: title,
-            }))}
-          />
+          {finalLink ? (
+            <a href={finalLink} target="_blank" rel="noopener noreferrer">
+              <Carousel
+                sizes="(max-width: 960px) 100vw, 960px"
+                items={images.map((image) => ({
+                  slide: image,
+                  alt: title,
+                }))}
+              />
+            </a>
+          ) : (
+            <Carousel
+              sizes="(max-width: 960px) 100vw, 960px"
+              items={images.map((image) => ({
+                slide: image,
+                alt: title,
+              }))}
+            />
+          )}
         </Column>
       )}
 
@@ -289,13 +300,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </Column>
             )}
 
-            <Flex gap="24" wrap>
-              {link && (
-                <SmartLink href={link} suffixIcon="arrowUpRightFromSquare">
-                  <Text variant="body-default-m">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
+            {/* 🔥 FIXED BUTTON */}
+            {finalLink && (
+              <SmartLink href={finalLink}>
+                <Flex
+                  gap="8"
+                  style={{
+                    padding: "12px 18px",
+                    borderRadius: "999px",
+                    background: "rgba(88, 166, 255, 0.18)",
+                    border: "1px solid rgba(88, 166, 255, 0.45)",
+                    alignItems: "center",
+                    width: "fit-content",
+                    transition: "0.2s ease",
+                  }}
+                >
+                  <Text variant="body-default-m">Play in browser</Text>
+                  <Text style={{ fontSize: "14px" }}>↗</Text>
+                </Flex>
+              </SmartLink>
+            )}
           </Column>
         )}
       </Flex>

@@ -100,60 +100,64 @@ const about: About = {
   work: {
     display: true,
     title: "Experience",
-    experiences: [
+experiences: [
+  {
+    company: "Tweed & Bottlecap Media",
+    timeframe: "Oct 2022 – Feb 2023",
+    role: "Game Developer — Tweed Grow To Win",
+    link: "https://roozbehmd.github.io/Tweed2/",
+    achievements: [
+      "Developed a promotional web-based game in Unity and C#, building task-based gameplay, interactive environments, and player progression systems.",
+      "Implemented core gameplay mechanics including objectives, task flow, and score tracking to support user engagement and repeat play.",
+      "Built a score tracking system using AWS to securely store user data and support weekly performance-based rewards.",
+      "Collaborated with design and marketing teams to align gameplay, visuals, and reward systems with campaign goals while optimizing performance across web and mobile.",
+    ],
+    images: [
       {
-        company: "Tweed & Bottlecap Media",
-        timeframe: "Oct 2022 – Feb 2023",
-        role: "Game Developer — Tweed Grow To Win",
-        achievements: [
-          "Developed a promotional web-based game in Unity and C#, building task-based gameplay, interactive environments, and player progression systems.",
-          "Implemented core gameplay mechanics including objectives, task flow, and score tracking to support user engagement and repeat play.",
-          "Built a score tracking system using AWS to securely store user data and support weekly performance-based rewards.",
-          "Collaborated with design and marketing teams to align gameplay, visuals, and reward systems with campaign goals while optimizing performance across web and mobile.",
-        ],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Tweed Grow To Win promotional game",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Personal Project",
-        timeframe: "Mar 2025 – Present",
-        role: "Unity Developer — Duck Hunt VR",
-        achievements: [
-          "Developed a VR game in Unity and C#, implementing physics-based shooting mechanics and real-time interactions for immersive gameplay.",
-          "Integrated motion controller input and spatial audio to create responsive and engaging player feedback.",
-          "Designed dynamic environments with animation and particle effects while optimizing scene transitions and overall performance.",
-        ],
-        images: [],
-      },
-      {
-        company: "York University",
-        timeframe: "Jan 2025 – Apr 2025",
-        role: "Interactive Web Developer — HarmonicHue",
-        achievements: [
-          "Built an interactive web application using JavaScript, HTML, CSS, and p5.js to generate personalized music-based experiences.",
-          "Designed a multi-step interface with animation, real-time feedback, and dynamic content to improve engagement and usability.",
-          "Tested the experience with 50+ users and analyzed feedback in Excel to refine interaction flow and completion rates.",
-        ],
-        images: [],
-      },
-      {
-        company: "York University",
-        timeframe: "Sep 2025 – Mar 2026",
-        role: "Interactive Systems Developer — Mutate",
-        achievements: [
-          "Developed a hybrid board game that combined physical gameplay with digital system responses using Arduino, sensors, and embedded components.",
-          "Integrated hall-effect sensors, servo motors, and LEDs to create responsive, real-time interactions between players and the game board.",
-          "Designed and modelled physical game components in Blender for 3D printing and collaborated with a multidisciplinary team to connect hardware, software, and gameplay systems.",
-        ],
-        images: [],
+        src: "/images/projects/project-01/cover-01.jpg",
+        alt: "Tweed Grow To Win promotional game",
+        width: 16,
+        height: 9,
       },
     ],
+  },
+  {
+    company: "Personal Project",
+    timeframe: "Mar 2025 – Present",
+    role: "Unity Developer — Duck Hunt VR",
+    link: "",
+    achievements: [
+      "Developed a VR game in Unity and C#, implementing physics-based shooting mechanics and real-time interactions for immersive gameplay.",
+      "Integrated motion controller input and spatial audio to create responsive and engaging player feedback.",
+      "Designed dynamic environments with animation and particle effects while optimizing scene transitions and overall performance.",
+    ],
+    images: [],
+  },
+  {
+    company: "York University",
+    timeframe: "Jan 2025 – Apr 2025",
+    role: "Interactive Web Developer — HarmonicHue",
+    link: "https://editor.p5js.org/Radinm/full/glotI8Lcx",
+    achievements: [
+      "Built an interactive web application using JavaScript, HTML, CSS, and p5.js to generate personalized music-based experiences.",
+      "Designed a multi-step interface with animation, real-time feedback, and dynamic content to improve engagement and usability.",
+      "Tested the experience with 50+ users and analyzed feedback in Excel to refine interaction flow and completion rates.",
+    ],
+    images: [],
+  },
+  {
+    company: "York University",
+    timeframe: "Sep 2025 – Mar 2026",
+    role: "Interactive Systems Developer — Mutate",
+    link: "",
+    achievements: [
+      "Developed a hybrid board game that combined physical gameplay with digital system responses using Arduino, sensors, and embedded components.",
+      "Integrated hall-effect sensors, servo motors, and LEDs to create responsive, real-time interactions between players and the game board.",
+      "Designed and modelled physical game components in Blender for 3D printing and collaborated with a multidisciplinary team to connect hardware, software, and gameplay systems.",
+    ],
+    images: [],
+  },
+],
   },
   studies: {
     display: true,
