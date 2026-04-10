@@ -106,8 +106,11 @@ style={{ minWidth: "180px" }}            paddingX="l"
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
-
+<Avatar
+  src={person.avatar}
+  size="xl"
+  style={{ width: "225px", height: "225px" }}
+/>
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               <Text variant="body-default-s">Toronto, Canada</Text>

@@ -5,7 +5,6 @@ import {
   Avatar,
   RevealFx,
   Column,
-  Row,
   Schema,
   Meta,
 } from "@once-ui-system/core";
@@ -28,7 +27,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="56" paddingY="24" horizontal="center">
+    <Column maxWidth="l" gap="56" paddingY="24" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -52,22 +51,55 @@ export default function Home() {
             </Heading>
           </RevealFx>
 
-          <RevealFx translateY="8" delay={0.15} paddingBottom="20">
+          <RevealFx translateY="8" delay={0.15} paddingBottom="48">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
 
           <RevealFx delay={0.3}>
-            <Row fillWidth horizontal="center">
-              {" "}
-              <Button href={about.path} variant="secondary" size="l" arrowIcon>
-                <Row gap="8" vertical="center" paddingX="8">
-                  {about.avatar.display && <Avatar src={person.avatar} size="m" />}
-                  More About Me
-                </Row>
-              </Button>
-            </Row>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "20px",
+                }}
+              >
+                {about.avatar.display && (
+                  <div
+                    style={{
+                      borderRadius: "999px",
+                      boxShadow: "0 0 30px rgba(255, 255, 255, 0.12)",
+                    }}
+                  >
+                    <Avatar
+                      src={person.avatar}
+                      size="xl"
+                      style={{ width: "210px", height: "210px" }}
+                    />{" "}
+                  </div>
+                )}
+
+                <div
+                  style={{
+                    borderRadius: "999px",
+                    boxShadow: "0 0 24px rgba(59, 130, 246, 0.28)",
+                  }}
+                >
+                  <Button href={about.path} variant="secondary" size="l" arrowIcon>
+                    More About Me
+                  </Button>
+                </div>
+              </div>
+            </div>
           </RevealFx>
         </Column>
       </Column>
@@ -91,7 +123,7 @@ export default function Home() {
         </RevealFx>
 
         <RevealFx translateY="16" delay={0.55}>
-          <Projects range={[1, 3]} compact />{" "}
+          <Projects range={[1, 3]} compact />
         </RevealFx>
       </Column>
 
