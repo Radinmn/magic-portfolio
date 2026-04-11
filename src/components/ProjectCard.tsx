@@ -92,38 +92,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
-      {/* CLICKABLE IMAGE */}
-      {hasImages && (
-        <Column
-          fillWidth
-          style={{
-            overflow: "hidden",
-            borderRadius: "20px",
-            cursor: finalLink ? "pointer" : "default",
-          }}
-        >
-          {finalLink ? (
-            <a href={finalLink} target="_blank" rel="noopener noreferrer">
-              <Carousel
-                sizes="(max-width: 960px) 100vw, 960px"
-                items={images.map((image) => ({
-                  slide: image,
-                  alt: title,
-                }))}
-              />
-            </a>
-          ) : (
-            <Carousel
-              sizes="(max-width: 960px) 100vw, 960px"
-              items={images.map((image) => ({
-                slide: image,
-                alt: title,
-              }))}
-            />
-          )}
-        </Column>
-      )}
-
+<Column
+  fillWidth
+  style={{
+    overflow: "hidden",
+    borderRadius: "20px",
+    position: "relative",
+    aspectRatio: "16 / 9",
+  }}
+>
+  <div style={{ height: "100%" }}>
+    <Carousel
+      sizes="(max-width: 960px) 100vw, 960px"
+      items={images.map((image) => ({
+        slide: image,
+        alt: title,
+      }))}
+    />
+  </div>
+</Column>
       <Flex
         fillWidth
         gap="64"
@@ -292,7 +279,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </Column>
             )}
 
-            {/* 🔥 FIXED BUTTON */}
+            {/* BUTTON (ONLY NAVIGATION NOW) */}
             {finalLink && (
               <SmartLink href={finalLink}>
                 <Flex
@@ -305,9 +292,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     alignItems: "center",
                     width: "fit-content",
                     transition: "0.2s ease",
+                    cursor: "pointer",
                   }}
                 >
-                  <Text variant="body-default-m">Play in browser</Text>
+                  <Text variant="body-default-m">View Project</Text>
                   <Text style={{ fontSize: "14px" }}>↗</Text>
                 </Flex>
               </SmartLink>

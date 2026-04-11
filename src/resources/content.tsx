@@ -122,18 +122,6 @@ experiences: [
     ],
   },
   {
-    company: "Personal Project",
-    timeframe: "Mar 2025 – Present",
-    role: "Unity Developer — Duck Hunt VR",
-    link: "",
-    achievements: [
-      "Developed a VR game in Unity and C#, implementing physics-based shooting mechanics and real-time interactions for immersive gameplay.",
-      "Integrated motion controller input and spatial audio to create responsive and engaging player feedback.",
-      "Designed dynamic environments with animation and particle effects while optimizing scene transitions and overall performance.",
-    ],
-    images: [],
-  },
-  {
     company: "York University",
     timeframe: "Jan 2025 – Apr 2025",
     role: "Interactive Web Developer — HarmonicHue",
@@ -154,6 +142,18 @@ experiences: [
       "Developed a hybrid board game that combined physical gameplay with digital system responses using Arduino, sensors, and embedded components.",
       "Integrated hall-effect sensors, servo motors, and LEDs to create responsive, real-time interactions between players and the game board.",
       "Designed and modelled physical game components in Blender for 3D printing and collaborated with a multidisciplinary team to connect hardware, software, and gameplay systems.",
+    ],
+    images: [],
+  },
+    {
+    company: "Personal Project",
+    timeframe: "Mar 2025 – Present",
+    role: "Unity Developer — Duck Hunt VR",
+    link: "",
+    achievements: [
+      "Developed a VR game in Unity and C#, implementing physics-based shooting mechanics and real-time interactions for immersive gameplay.",
+      "Integrated motion controller input and spatial audio to create responsive and engaging player feedback.",
+      "Designed dynamic environments with animation and particle effects while optimizing scene transitions and overall performance.",
     ],
     images: [],
   },
