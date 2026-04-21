@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { useEffect, useRef } from "react";
 
 interface ProjectCardProps {
   images: string[];
@@ -57,6 +58,7 @@ const getWorkPoints = (content: string) => {
 };
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
+  
   images = [],
   title,
   content,

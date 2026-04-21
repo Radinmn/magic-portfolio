@@ -39,6 +39,7 @@ export default function OceanClickEffect() {
       ) {
         return;
       }
+      
 
       const id = idCounter++;
       const seed = Math.random();
