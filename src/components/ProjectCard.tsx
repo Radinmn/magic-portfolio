@@ -95,17 +95,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       }
     >
       {/* CAROUSEL */}
-<Column
-  style={{
-    width: "100%",
-    maxWidth: "800px", // 🔥 controls image size
-    margin: "0 auto",  // centers it
-    overflow: "hidden",
-    borderRadius: "20px",
-    position: "relative",
-    aspectRatio: "16 / 9",
-  }}
->        <div style={{ height: "100%" }}>
+      <Column
+        style={{
+          width: "100%",
+          maxWidth: "800px", // 🔥 controls image size
+          margin: "0 auto", // centers it
+          overflow: "hidden",
+          borderRadius: "20px",
+          position: "relative",
+          aspectRatio: "16 / 9",
+        }}
+      >
+        {" "}
+        <div style={{ height: "100%" }}>
           <Carousel
             sizes="(max-width: 960px) 100vw, 960px"
             items={images.map((image) => ({

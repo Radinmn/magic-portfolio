@@ -100,17 +100,14 @@ export default function About() {
             position="sticky"
             s={{ position: "relative", style: { top: "auto" } }}
             xs={{ style: { top: "auto" } }}
-style={{ minWidth: "180px" }}            paddingX="l"
+            style={{ minWidth: "180px" }}
+            paddingX="l"
             paddingBottom="xl"
             gap="16"
             flex={3}
             horizontal="center"
           >
-<Avatar
-  src={person.avatar}
-  size="xl"
-  style={{ width: "225px", height: "225px" }}
-/>
+            <Avatar src={person.avatar} size="xl" style={{ width: "225px", height: "225px" }} />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               <Text variant="body-default-s">Toronto, Canada</Text>
@@ -229,7 +226,7 @@ style={{ minWidth: "180px" }}            paddingX="l"
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="8">
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="16">
               <Text
                 variant="body-default-l"
                 style={{
@@ -247,11 +244,11 @@ style={{ minWidth: "180px" }}            paddingX="l"
 
           {about.work.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="xs">
                 {about.work.title}
               </Heading>
 
-              <Column fillWidth gap="20" marginBottom="40">
+              <Column fillWidth gap="20" marginBottom="20">
                 {about.work.experiences.map((experience, index) => {
                   const projectPageHref = getProjectPageHref(experience.role);
 
@@ -309,12 +306,10 @@ style={{ minWidth: "180px" }}            paddingX="l"
                       </Column>
 
                       {(projectPageHref || experience.link) && (
-                        <Row gap="0" wrap paddingTop="4">
-                          {projectPageHref && (
-                            <Button href={projectPageHref} variant="secondary" size="s">
-                              View Full Project
-                            </Button>
-                          )}
+                        <Row gap="8" wrap paddingTop="4">
+                          <Button href="/work" variant="secondary" size="s">
+                            See Full Projects
+                          </Button>
 
                           {experience.link && (
                             <Button
@@ -365,7 +360,7 @@ style={{ minWidth: "180px" }}            paddingX="l"
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="0">
                 {about.studies.title}
               </Heading>
 
@@ -400,7 +395,7 @@ style={{ minWidth: "180px" }}            paddingX="l"
                 as="h2"
                 id={about.technical.title}
                 variant="display-strong-s"
-                marginBottom="20"
+                marginBottom="0"
               >
                 {about.technical.title}
               </Heading>
@@ -412,12 +407,10 @@ style={{ minWidth: "180px" }}            paddingX="l"
                     gap="s"
                     style={{
                       flex: "1 1 280px",
-                      padding: "18px 20px",
+                      padding: "15px 20px",
                       borderRadius: "18px",
                       background:
-                        index % 2 === 0
-                          ? "rgba(255,255,255,0.025)"
-                          : "rgba(88,166,255,0.04)",
+                        index % 2 === 0 ? "rgba(255,255,255,0.025)" : "rgba(88,166,255,0.04)",
                       border: "1px solid rgba(255,255,255,0.08)",
                     }}
                   >
@@ -430,11 +423,11 @@ style={{ minWidth: "180px" }}            paddingX="l"
                     </Text>
 
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="l">
+                      <Row wrap gap="4" paddingTop="xs">
                         {skill.tags.map((tag, tagIndex) => (
                           <Tag
                             key={`${skill.title}-${tagIndex}`}
-                            size="m"
+                            size="s"
                             prefixIcon={tag.icon}
                             style={{
                               background: "rgba(255,255,255,0.04)",
