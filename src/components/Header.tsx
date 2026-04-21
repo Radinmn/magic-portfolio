@@ -73,8 +73,8 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-  Toronto, Canada
-</Row>
+          Toronto, Canada
+        </Row>
         <Row fillWidth horizontal="center">
           <Row
             background="page"
@@ -90,7 +90,7 @@ export const Header = () => {
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                 {routes["/work"] && (
+              {routes["/work"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
