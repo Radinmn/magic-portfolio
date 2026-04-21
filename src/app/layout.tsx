@@ -1,6 +1,7 @@
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
+import OceanClickEffect from "@/components/effects/OceanClickEffect";
 
 import classNames from "classnames";
 
@@ -113,6 +114,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
+          <OceanClickEffect /> {/* 👈 ADD THIS LINE */}
           <RevealFx fill position="absolute">
             <Background
               mask={{
@@ -158,6 +160,7 @@ export default async function RootLayout({
           <Flex fillWidth minHeight="16" s={{ hide: true }} />
           <Header />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
+            {" "}
             <Flex horizontal="center" fillWidth minHeight="0">
               <RouteGuard>{children}</RouteGuard>
             </Flex>
