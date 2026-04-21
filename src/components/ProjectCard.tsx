@@ -269,7 +269,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   width: "fit-content",
                 }}
               >
-                <Text>Play In Browser Project</Text>
+                <Text>Play In Browser</Text>
                 <Text>▶</Text>
               </Flex>
             </SmartLink>
