@@ -125,7 +125,50 @@ export default function Home() {
         <RevealFx translateY="16" delay={0.55}>
           <Projects range={[1, 3]} compact />
         </RevealFx>
+
+<RevealFx translateY="16" delay={0.65}>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      width: "100%",
+      marginTop: "16px",
+      
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "520px",
+        borderRadius: "1909px",
+        
+  background: "rgba(48, 118, 197, 0.08)", // brighter
+  border: "1px solid rgba(88, 166, 255, 0.35)", // stronger edge
+  boxShadow: "0 0 32px rgba(59, 131, 246, 0.45)", // more glow
+      }}
+    >
+<Button
+  href="/work"
+  variant="secondary"
+  size="l"
+  fillWidth
+  shimmer
+  style={{
+    minHeight: "60px",
+    fontSize: "1.05rem",
+    fontWeight: 500,
+    border: "none",
+    boxShadow: "none",
+  }}
+>
+        See Full Projects
+      </Button>
+    </div>
+  </div>
+</RevealFx>
+        
       </Column>
+      
 
       {/* FUTURE: BLOG */}
       {/*

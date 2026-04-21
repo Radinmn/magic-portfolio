@@ -89,7 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     gap="l"
     paddingY="48"
     style={{
-      borderBottom: "1px solid rgba(255,255,255,0.08)",
+      // borderBottom: "1px solid rgba(255,255,255,0.08)",
     }}
   >
     {/* CAROUSEL */}
@@ -266,8 +266,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 width: "fit-content",
               }}
             >
-              <Text>View Project</Text>
-              <Text>↗</Text>
+              <Text>Play In Browser Project</Text>
+              <Text>▶</Text>
             </Flex>
           </SmartLink>
         )}
