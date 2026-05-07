@@ -172,7 +172,7 @@ const about: About = {
         ],
         images: [
           {
-            src: "/images/projects/mt2.png",
+            src: "/images/projects/mt4.jpg",
             alt: "Mutate screenshot",
             width: 320,
             height: 180,
